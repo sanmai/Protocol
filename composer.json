@@ -33,10 +33,15 @@
     "autoload": {
         "psr-4": {
             "Hoa\\Protocol\\"      : "Source",
-            "Hoa\\Protocol\\Bin\\" : "Bin",
-            "Hoa\\Protocol\\Test\\": "Test"
+            "Hoa\\Protocol\\Bin\\" : "Bin"
         },
         "files": ["Source/Wrapper.php"]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Hoa\\Protocol\\Test\\": "Test"
+        },
+        "files": ["Test/Resolve.php"]
     },
     "extra": {
         "branch-alias": {
