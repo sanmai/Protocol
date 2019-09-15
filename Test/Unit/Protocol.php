@@ -120,9 +120,7 @@ class Protocol extends Test\Unit\Suite
             ->when($result = $protocol->resolve('hoa://Library', true, true))
             ->then
                 ->array($result)
-                    ->contains(
-                        dirname(__DIR__, 4) . DS . 'hoa'
-                    );
+                    ->isEqualTo([]);
     }
 
     public function case_resolve_unfold_to_non_existing_resources()
