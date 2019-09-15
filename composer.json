@@ -1,5 +1,6 @@
 {
-    "name"       : "hoa/protocol",
+    "name"       : "sanmai/hoa-protocol",
+    "provide"    : {"hoa/protocol": "1.17.01.14"},
     "description": "The Hoa\\Protocol library.",
     "type"       : "library",
     "keywords"   : ["library", "protocol", "resource", "stream", "wrapper"],
