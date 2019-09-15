@@ -16,11 +16,7 @@
         }
     ],
     "support": {
-        "email" : "support@hoa-project.net",
-        "irc"   : "irc://chat.freenode.net/hoaproject",
-        "forum" : "https://users.hoa-project.net/",
-        "docs"  : "https://central.hoa-project.net/Documentation/Library/Protocol",
-        "source": "https://central.hoa-project.net/Resource/Library/Protocol"
+        "issues" : "https://github.com/sanmai/Protocol/issues"
     },
     "require": {
         "php"            : "^7.0",
