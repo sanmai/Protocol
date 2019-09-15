@@ -206,7 +206,7 @@ class Wrapper
         }
 
         if (null === $this->context) {
-            $openedPath = fopen($path, $mode, $options & STREAM_USE_PATH);
+            $openedPath = fopen($path, $mode, (bool) ($options & STREAM_USE_PATH));
         } else {
             $openedPath = fopen(
                 $path,
