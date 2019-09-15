@@ -15,7 +15,7 @@ With [Composer](https://getcomposer.org/), to include this library into
 your dependencies, you need to...
 
 ```sh
-$ composer require sanmai/hoa-protocol
+composer require sanmai/hoa-protocol
 ```
 
 ## Testing
@@ -23,13 +23,13 @@ $ composer require sanmai/hoa-protocol
 Before running the test suites, the development dependencies must be installed:
 
 ```sh
-$ composer install
+composer install
 ```
 
 Then, to run all the test suites:
 
 ```sh
-$ vendor/bin/atoum -d Test
+vendor/bin/atoum -d Test
 ```
 
 ## License
