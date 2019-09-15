@@ -3,11 +3,6 @@ language: php
 matrix:
   include:
     - php: 7.0
-      env:
-        - ENABLE_XDEBUG=true
-    - php: 7.0
-      env:
-        - ENABLE_DEVTOOLS=true
   fast_finish: true
 
 os:
