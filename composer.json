@@ -1,51 +1,63 @@
 {
-    "name"       : "sanmai/hoa-protocol",
-    "provide"    : {"hoa/protocol": "1.17.01.14"},
+    "name": "sanmai/hoa-protocol",
+    "type": "library",
     "description": "The Hoa\\Protocol library.",
-    "type"       : "library",
-    "keywords"   : ["library", "protocol", "resource", "stream", "wrapper"],
-    "homepage"   : "https://hoa-project.net/",
-    "license"    : "BSD-3-Clause",
-    "authors"    : [
+    "keywords": [
+        "library",
+        "protocol",
+        "resource",
+        "stream",
+        "wrapper"
+    ],
+    "homepage": "https://hoa-project.net/",
+    "license": "BSD-3-Clause",
+    "authors": [
         {
-            "name" : "Ivan Enderlin",
+            "name": "Ivan Enderlin",
             "email": "ivan.enderlin@hoa-project.net"
         },
         {
-            "name"    : "Hoa community",
+            "name": "Hoa community",
             "homepage": "https://hoa-project.net/"
         }
     ],
-    "support": {
-        "issues" : "https://github.com/sanmai/Protocol/issues"
-    },
     "require": {
-        "php"            : "^7.0",
+        "php": "^7.0",
         "hoa/consistency": "*",
         "hoa/exception": "*"
+    },
+    "provide": {
+        "hoa/protocol": "1.17.01.14"
     },
     "require-dev": {
         "atoum/stubs": "*",
         "hoa/test": "*"
-    },
-    "autoload": {
-        "psr-4": {
-            "Hoa\\Protocol\\"      : "Source",
-            "Hoa\\Protocol\\Bin\\" : "Bin"
-        },
-        "files": ["Source/Wrapper.php"]
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Hoa\\Protocol\\Test\\": "Test"
-        },
-        "files": ["Test/Resolve.php"]
     },
     "extra": {
         "branch-alias": {
             "dev-master": "2.x-dev"
         }
     },
+    "autoload": {
+        "psr-4": {
+            "Hoa\\Protocol\\": "Source",
+            "Hoa\\Protocol\\Bin\\": "Bin"
+        },
+        "files": [
+            "Source/Wrapper.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Hoa\\Protocol\\Test\\": "Test"
+        },
+        "files": [
+            "Test/Resolve.php"
+        ]
+    },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "support": {
+        "issues": "https://github.com/sanmai/Protocol/issues"
+    }
 }
