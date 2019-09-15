@@ -23,8 +23,8 @@
         "hoa/consistency": "*",
         "hoa/exception": "*"
     },
-    "provide": {
-        "hoa/protocol": "1.17.01.14"
+    "replace": {
+        "hoa/protocol": "*"
     },
     "require-dev": {
         "atoum/stubs": "*",
