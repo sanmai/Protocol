@@ -52,8 +52,6 @@
             "Test/Resolve.php"
         ]
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "support": {
         "issues": "https://github.com/sanmai/Protocol/issues"
     }
