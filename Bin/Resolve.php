@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 /**
  * Hoa
  *
@@ -153,7 +151,7 @@ class Resolve extends Console\Dispatcher\Kit
     /**
      * The command usage.
      */
-    public function usage(): void
+    public function usage()
     {
         echo
             'Usage   : protocol:resolve <options> path', "\n",
