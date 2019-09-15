@@ -27,6 +27,7 @@
         "hoa/protocol": "*"
     },
     "require-dev": {
+        "atoum/atoum": "^3",
         "atoum/stubs": "*",
         "hoa/test": "*"
     },
