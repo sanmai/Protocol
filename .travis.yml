@@ -1,15 +1,18 @@
 language: php
 
+php:
+  - 7.0
+
 matrix:
-  include:
-    - php: 7.0
   fast_finish: true
 
-os:
-  - linux
+cache:
+  directories:
+    - $HOME/.composer
+    - build/cache
 
-sudo: false
+install:
+  - composer install --prefer-dist
 
 script:
-  - composer install
   - vendor/bin/atoum -d Test/
