@@ -50,7 +50,7 @@ class Protocol extends Node
      *
      * @const string
      */
-    public const NO_RESOLUTION = '/hoa/flatland';
+    const NO_RESOLUTION = '/hoa/flatland';
 
     /**
      * Singleton.

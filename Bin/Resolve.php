@@ -63,7 +63,7 @@ class Resolve extends Console\Dispatcher\Kit
     /**
      * The entry method.
      */
-    public function main(): ?int
+    public function main()
     {
         $exists  = true;
         $unfold  = false;
