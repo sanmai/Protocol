@@ -51,8 +51,8 @@ class Wrapper extends Test\Unit\Suite
             ->given($wrapper = new SUT())
             ->when($result = $wrapper->stream_cast(STREAM_CAST_FOR_SELECT))
             ->then
-                ->boolean($result)
-                    ->isFalse();
+                ->variable($result)
+                    ->isNull();
     }
 
     public function case_stream_cast_as_stream()
@@ -61,8 +61,8 @@ class Wrapper extends Test\Unit\Suite
             ->given($wrapper = new SUT())
             ->when($result = $wrapper->stream_cast(STREAM_CAST_AS_STREAM))
             ->then
-                ->boolean($result)
-                    ->isFalse();
+                ->variable($result)
+                    ->isNull();
     }
 
     public function case_stream_close()
