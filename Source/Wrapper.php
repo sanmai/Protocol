@@ -87,7 +87,7 @@ class Wrapper
      * All resources that were locked, or allocated, by the wrapper should be
      * released.
      */
-    public function stream_close(): void
+    public function stream_close()
     {
         if (true === @fclose($this->getStream())) {
             $this->_stream     = null;
@@ -292,7 +292,7 @@ class Wrapper
      * Any resources which were locked, or allocated, during opening and use of
      * the directory stream should be released.
      */
-    public function dir_closedir(): void
+    public function dir_closedir()
     {
         closedir($this->getStream());
         $this->_stream     = null;
@@ -345,7 +345,7 @@ class Wrapper
      * call to self::dir_readdir should return the first entry in the location
      * returned by self::dir_opendir.
      */
-    public function dir_rewinddir(): void
+    public function dir_rewinddir()
     {
         rewinddir($this->getStream());
     }
@@ -465,7 +465,7 @@ class Wrapper
     /**
      * Get stream name.
      */
-    public function getStreamName(): ?string
+    public function getStreamName()
     {
         return $this->_streamName;
     }
