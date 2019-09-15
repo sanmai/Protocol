@@ -12,4 +12,4 @@ sudo: false
 
 script:
   - composer install
-  - vendor/bin/hoa test:run
+  - vendor/bin/atoum -d Test/
