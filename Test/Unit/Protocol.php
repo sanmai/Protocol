@@ -136,8 +136,8 @@ class Protocol extends Test\Unit\Suite
             ->then
                 ->array($result)
                     ->isEqualTo([
-                        $parentHoaDirectory . DS . 'hoathis',
-                        $parentHoaDirectory . DS . 'hoa'
+                        $parentHoaDirectory . DS . 'hoathis' . DS,
+                        $parentHoaDirectory . DS . 'hoa' . DS
                     ]);
     }
 }
