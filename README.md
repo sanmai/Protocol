@@ -1,27 +1,6 @@
-<p align="center">
-  <img src="https://static.hoa-project.net/Image/Hoa.svg" alt="Hoa" width="250px" />
-</p>
-
----
-
-<p align="center">
-  <a href="https://travis-ci.org/hoaproject/Protocol"><img src="https://img.shields.io/travis/hoaproject/Protocol/master.svg" alt="Build status" /></a>
-  <a href="https://coveralls.io/github/hoaproject/Protocol?branch=master"><img src="https://img.shields.io/coveralls/hoaproject/Protocol/master.svg" alt="Code coverage" /></a>
-  <a href="https://packagist.org/packages/hoa/protocol"><img src="https://img.shields.io/packagist/dt/hoa/protocol.svg" alt="Packagist" /></a>
-  <a href="https://hoa-project.net/LICENSE"><img src="https://img.shields.io/packagist/l/hoa/protocol.svg" alt="License" /></a>
-</p>
-<p align="center">
-  Hoa is a <strong>modular</strong>, <strong>extensible</strong> and
-  <strong>structured</strong> set of PHP libraries.<br />
-  Moreover, Hoa aims at being a bridge between industrial and research worlds.
-</p>
+[![Build Status](https://travis-ci.com/sanmai/Protocol.svg?branch=master)](https://travis-ci.com/sanmai/Protocol)
 
 # Hoa\Protocol
-
-[![Help on IRC](https://img.shields.io/badge/help-%23hoaproject-ff0066.svg)](https://webchat.freenode.net/?channels=#hoaproject)
-[![Help on Gitter](https://img.shields.io/badge/help-gitter-ff0066.svg)](https://gitter.im/hoaproject/central)
-[![Documentation](https://img.shields.io/badge/documentation-hack_book-ff0066.svg)](https://central.hoa-project.net/Documentation/Library/Protocol)
-[![Board](https://img.shields.io/badge/organisation-board-ff0066.svg)](https://waffle.io/hoaproject/protocol)
 
 This library provides the `hoa://` protocol, which is a way to abstract resource
 accesses.
@@ -35,7 +14,7 @@ your dependencies, you need to
 require [`hoa/protocol`](https://packagist.org/packages/hoa/protocol):
 
 ```sh
-$ composer require hoa/protocol '~2.0'
+$ composer require sanmai/hoa-protocol
 ```
 
 For more installation procedures, please read [the Source
@@ -52,7 +31,7 @@ $ composer install
 Then, to run all the test suites:
 
 ```sh
-$ vendor/bin/hoa test:run
+$ vendor/bin/atoum -d Test
 ```
 
 For more information, please read the [contributor
