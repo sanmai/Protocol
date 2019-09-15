@@ -23,12 +23,13 @@
         "source": "https://central.hoa-project.net/Resource/Library/Protocol"
     },
     "require": {
-        "php"            : ">=7.1",
-        "hoa/consistency": "dev-master",
-        "hoa/exception"  : "dev-master"
+        "php"            : "^7.0",
+        "hoa/consistency": "*",
+        "hoa/exception": "*"
     },
     "require-dev": {
-        "hoa/test": "dev-master"
+        "atoum/stubs": "*",
+        "hoa/test": "*"
     },
     "autoload": {
         "psr-4": {
@@ -47,5 +48,7 @@
         "branch-alias": {
             "dev-master": "2.x-dev"
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
