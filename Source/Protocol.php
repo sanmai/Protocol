@@ -90,7 +90,7 @@ class Protocol extends Node
     /**
      * Initialize the protocol.
      */
-    protected function initialize(): void
+    protected function initialize()
     {
         $root  = dirname(__DIR__, 3);
         $argv0 = realpath($_SERVER['argv'][0]);
@@ -222,7 +222,7 @@ class Protocol extends Node
     /**
      * Clear the cache.
      */
-    public static function clearCache(): void
+    public static function clearCache()
     {
         self::$_cache = [];
     }

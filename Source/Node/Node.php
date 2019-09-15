@@ -89,7 +89,7 @@ class Node implements \ArrayAccess, \IteratorAggregate
     /**
      * Add a node.
      */
-    public function offsetSet($name, $node): void
+    public function offsetSet($name, $node)
     {
         if (!($node instanceof self)) {
             throw new Protocol\Exception(
@@ -140,7 +140,7 @@ class Node implements \ArrayAccess, \IteratorAggregate
     /**
      * Remove a node.
      */
-    public function offsetUnset($name): void
+    public function offsetUnset($name)
     {
         unset($this->_children[$name]);
     }
@@ -283,7 +283,7 @@ class Node implements \ArrayAccess, \IteratorAggregate
     /**
      * Set a new reach value.
      */
-    public function setReach(string $reach): ?string
+    public function setReach(string $reach)
     {
         $old          = $this->_reach;
         $this->_reach = $reach;
@@ -294,7 +294,7 @@ class Node implements \ArrayAccess, \IteratorAggregate
     /**
      * Get node's name.
      */
-    public function getName(): ?string
+    public function getName()
     {
         return $this->_name;
     }
@@ -302,7 +302,7 @@ class Node implements \ArrayAccess, \IteratorAggregate
     /**
      * Get reach's root.
      */
-    protected function getReach(): ?string
+    protected function getReach()
     {
         return $this->_reach;
     }
