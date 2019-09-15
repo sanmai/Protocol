@@ -46,7 +46,7 @@ use Hoa\Test;
  */
 class Exception extends Test\Unit\Suite
 {
-    public function case_hoa_exception(): void
+    public function case_hoa_exception()
     {
         $this
             ->when($result = new SUT('foo', 0))

@@ -47,7 +47,7 @@ use Hoa\Test;
  */
 class Wrapper extends Test\Unit\Suite
 {
-    public function case_stream_cast_for_select(): void
+    public function case_stream_cast_for_select()
     {
         $this
             ->given($wrapper = new SUT())
@@ -57,7 +57,7 @@ class Wrapper extends Test\Unit\Suite
                     ->isFalse();
     }
 
-    public function case_stream_cast_as_stream(): void
+    public function case_stream_cast_as_stream()
     {
         $this
             ->given($wrapper = new SUT())
@@ -67,7 +67,7 @@ class Wrapper extends Test\Unit\Suite
                     ->isFalse();
     }
 
-    public function case_stream_close(): void
+    public function case_stream_close()
     {
         $this
             ->given(
@@ -84,7 +84,7 @@ class Wrapper extends Test\Unit\Suite
                     ->isNull();
     }
 
-    public function case_stream_not_eof(): void
+    public function case_stream_not_eof()
     {
         $this
             ->given(
@@ -98,7 +98,7 @@ class Wrapper extends Test\Unit\Suite
                     ->isFalse();
     }
 
-    public function case_stream_eof(): void
+    public function case_stream_eof()
     {
         $this
             ->given(
@@ -111,7 +111,7 @@ class Wrapper extends Test\Unit\Suite
                     ->isTrue();
     }
 
-    public function case_stream_flush(): void
+    public function case_stream_flush()
     {
         $this
             ->given(
@@ -124,7 +124,7 @@ class Wrapper extends Test\Unit\Suite
                     ->isTrue();
     }
 
-    public function _case_stream_xxx_lock($operation): void
+    public function _case_stream_xxx_lock($operation)
     {
         $this
             ->given(
@@ -172,7 +172,7 @@ class Wrapper extends Test\Unit\Suite
         return $this->_case_stream_xxx_lock(LOCK_NB);
     }
 
-    public function _case_metadata_touch_with_xxx_arguments($arguments, $path, $time, $atime): void
+    public function _case_metadata_touch_with_xxx_arguments($arguments, $path, $time, $atime)
     {
         $this
             ->given(
@@ -212,7 +212,7 @@ class Wrapper extends Test\Unit\Suite
         return $this->_case_metadata_touch_with_xxx_arguments([42, 777], 'foo', 42, 777);
     }
 
-    public function _case_metadata_owner_xxx($owner): void
+    public function _case_metadata_owner_xxx($owner)
     {
         $this
             ->given(
@@ -246,7 +246,7 @@ class Wrapper extends Test\Unit\Suite
         return $this->_case_metadata_owner_xxx(STREAM_META_OWNER_NAME);
     }
 
-    public function _case_metadata_group_xxx($grp): void
+    public function _case_metadata_group_xxx($grp)
     {
         $this
             ->given(
@@ -280,7 +280,7 @@ class Wrapper extends Test\Unit\Suite
         return $this->_case_metadata_group_xxx(STREAM_META_GROUP_NAME);
     }
 
-    public function case_metadata_access(): void
+    public function case_metadata_access()
     {
         $this
             ->given(
@@ -304,7 +304,7 @@ class Wrapper extends Test\Unit\Suite
                     ->isEqualTo($_mode);
     }
 
-    public function case_metadata_default(): void
+    public function case_metadata_default()
     {
         $this
             ->given(
@@ -318,7 +318,7 @@ class Wrapper extends Test\Unit\Suite
                     ->isFalse();
     }
 
-    public function case_stream_open(): void
+    public function case_stream_open()
     {
         $this
             ->given(
@@ -351,7 +351,7 @@ class Wrapper extends Test\Unit\Suite
                     ->isEqualTo('atoum://Foo');
     }
 
-    public function case_stream_open_not_hoa_protocol(): void
+    public function case_stream_open_not_hoa_protocol()
     {
         $this
             ->given(
@@ -366,7 +366,7 @@ class Wrapper extends Test\Unit\Suite
                     ->isFalse();
     }
 
-    public function case_stream_open_not_a_resource(): void
+    public function case_stream_open_not_a_resource()
     {
         $this
             ->given(
@@ -398,7 +398,7 @@ class Wrapper extends Test\Unit\Suite
                     ->isStream();
     }
 
-    public function case_stream_read(): void
+    public function case_stream_read()
     {
         $this
             ->given(
@@ -476,7 +476,7 @@ class Wrapper extends Test\Unit\Suite
                 ->isEqualTo(2);
     }
 
-    public function case_stream_stat(): void
+    public function case_stream_stat()
     {
         $this
             ->given(
@@ -496,7 +496,7 @@ class Wrapper extends Test\Unit\Suite
                     ->isIdenticalTo($wrapper->getStream());
     }
 
-    public function case_stream_tell(): void
+    public function case_stream_tell()
     {
         $this
             ->given(
@@ -518,7 +518,7 @@ class Wrapper extends Test\Unit\Suite
                     ->isIdenticalTo($wrapper->getStream());
     }
 
-    public function case_stream_truncate(): void
+    public function case_stream_truncate()
     {
         $this
             ->given(
@@ -548,7 +548,7 @@ class Wrapper extends Test\Unit\Suite
                     ->isEqualTo(3);
     }
 
-    public function case_stream_write(): void
+    public function case_stream_write()
     {
         $this
             ->given(
@@ -576,7 +576,7 @@ class Wrapper extends Test\Unit\Suite
                     ->isEqualTo($data);
     }
 
-    public function case_dir_closedir(): void
+    public function case_dir_closedir()
     {
         $this
             ->given(
@@ -593,7 +593,7 @@ class Wrapper extends Test\Unit\Suite
                     ->isNull();
     }
 
-    public function case_dir_opendir(): void
+    public function case_dir_opendir()
     {
         $this
             ->given(
@@ -618,7 +618,7 @@ class Wrapper extends Test\Unit\Suite
                     ->isEqualTo('atoum://Bar');
     }
 
-    public function case_dir_opendir_not_a_resource(): void
+    public function case_dir_opendir_not_a_resource()
     {
         $this
             ->given(
@@ -643,7 +643,7 @@ class Wrapper extends Test\Unit\Suite
                     ->isNull();
     }
 
-    public function case_dir_readdir(): void
+    public function case_dir_readdir()
     {
         $this
             ->given(
@@ -663,7 +663,7 @@ class Wrapper extends Test\Unit\Suite
                     ->isIdenticalTo($wrapper->getStream());
     }
 
-    public function case_dir_readdir_until_eod(): void
+    public function case_dir_readdir_until_eod()
     {
         $this
             ->given(
@@ -693,7 +693,7 @@ class Wrapper extends Test\Unit\Suite
                     ->isFalse();
     }
 
-    public function case_dir_rewinddir(): void
+    public function case_dir_rewinddir()
     {
         $this
             ->given(
@@ -719,7 +719,7 @@ class Wrapper extends Test\Unit\Suite
                     ->isIdenticalTo($wrapper->getStream());
     }
 
-    public function case_dir_mkdir(): void
+    public function case_dir_mkdir()
     {
         $this
             ->given(
@@ -748,7 +748,7 @@ class Wrapper extends Test\Unit\Suite
                     ->isEqualTo($options | STREAM_MKDIR_RECURSIVE);
     }
 
-    public function case_rename(): void
+    public function case_rename()
     {
         $this
             ->given(
@@ -773,7 +773,7 @@ class Wrapper extends Test\Unit\Suite
                     ->isEqualTo(SUT::realPath($_to, false));
     }
 
-    public function case_rmdir(): void
+    public function case_rmdir()
     {
         $this
             ->given(
@@ -791,7 +791,7 @@ class Wrapper extends Test\Unit\Suite
                     ->isTrue();
     }
 
-    public function case_rmdir_a_file(): void
+    public function case_rmdir_a_file()
     {
         $this
             ->given(
@@ -804,7 +804,7 @@ class Wrapper extends Test\Unit\Suite
                     ->isFalse();
     }
 
-    public function case_unlink(): void
+    public function case_unlink()
     {
         $this
             ->given(
@@ -817,7 +817,7 @@ class Wrapper extends Test\Unit\Suite
                     ->isTrue();
     }
 
-    public function case_rmdir_a_directory(): void
+    public function case_rmdir_a_directory()
     {
         $this
             ->given(
@@ -830,7 +830,7 @@ class Wrapper extends Test\Unit\Suite
                     ->isFalse();
     }
 
-    public function case_url_stat(): void
+    public function case_url_stat()
     {
         $this
             ->given(
@@ -870,14 +870,14 @@ class Wrapper extends Test\Unit\Suite
                     ->isEqualTo(SUT::realPath($path));
     }
 
-    public function case_url_stat_not_hoa_protocol(): void
+    public function case_url_stat_not_hoa_protocol()
     {
         $this
             ->given(
                 $wrapper = new SUT(),
                 $path    = LUT::NO_RESOLUTION
             )
-            ->when(function () use ($wrapper, $path): void {
+            ->when(function () use ($wrapper, $path) {
                 $wrapper->url_stat($path, 0);
             })
             ->then

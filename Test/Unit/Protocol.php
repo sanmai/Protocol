@@ -47,7 +47,7 @@ use Hoa\Test;
  */
 class Protocol extends Test\Unit\Suite
 {
-    public function case_root_is_a_node(): void
+    public function case_root_is_a_node()
     {
         $this
             ->when($result = SUT::getInstance())
@@ -56,7 +56,7 @@ class Protocol extends Test\Unit\Suite
                     ->isInstanceOf(LUT\Node\Node::class);
     }
 
-    public function case_default_tree(): void
+    public function case_default_tree()
     {
         $this
             ->when($result = SUT::getInstance())
@@ -85,7 +85,7 @@ class Protocol extends Test\Unit\Suite
                     );
     }
 
-    public function case_resolve_not_a_hoa_path(): void
+    public function case_resolve_not_a_hoa_path()
     {
         $this
             ->given($protocol = SUT::getInstance())
@@ -95,7 +95,7 @@ class Protocol extends Test\Unit\Suite
                     ->isEqualTo('/foo/bar');
     }
 
-    public function case_resolve_to_non_existing_resource(): void
+    public function case_resolve_to_non_existing_resource()
     {
         $this
             ->given($protocol = SUT::getInstance())
@@ -105,7 +105,7 @@ class Protocol extends Test\Unit\Suite
                     ->isEqualTo(SUT::NO_RESOLUTION);
     }
 
-    public function case_resolve_does_not_test_if_exists(): void
+    public function case_resolve_does_not_test_if_exists()
     {
         $this
             ->given($protocol = SUT::getInstance())
@@ -115,7 +115,7 @@ class Protocol extends Test\Unit\Suite
                     ->isEqualTo('/Foo/Bar');
     }
 
-    public function case_resolve_unfold_to_existing_resources(): void
+    public function case_resolve_unfold_to_existing_resources()
     {
         $this
             ->given($protocol = SUT::getInstance())
@@ -127,7 +127,7 @@ class Protocol extends Test\Unit\Suite
                     );
     }
 
-    public function case_resolve_unfold_to_non_existing_resources(): void
+    public function case_resolve_unfold_to_non_existing_resources()
     {
         $this
             ->given(

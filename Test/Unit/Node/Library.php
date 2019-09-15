@@ -46,7 +46,7 @@ use Hoa\Test;
  */
 class Library extends Test\Unit\Suite
 {
-    public function case_reach_without_composer_without_a_queue(): void
+    public function case_reach_without_composer_without_a_queue()
     {
         $this
             ->given(
@@ -59,7 +59,7 @@ class Library extends Test\Unit\Suite
                     ->isEqualTo('bar');
     }
 
-    public function case_reach_without_composer_with_a_queue(): void
+    public function case_reach_without_composer_with_a_queue()
     {
         $this
             ->given(
@@ -72,7 +72,7 @@ class Library extends Test\Unit\Suite
                     ->isEqualTo('baz');
     }
 
-    public function case_reach_with_composer_without_a_queue_and_a_single_reach(): void
+    public function case_reach_with_composer_without_a_queue_and_a_single_reach()
     {
         $this
             ->given(
@@ -85,7 +85,7 @@ class Library extends Test\Unit\Suite
                     ->isEqualTo('Bar' . DS . 'Baz' . DS . 'qux' . DS);
     }
 
-    public function case_reach_with_composer_without_a_queue_and_a_multiple_reaches(): void
+    public function case_reach_with_composer_without_a_queue_and_a_multiple_reaches()
     {
         $this
             ->given(
@@ -105,7 +105,7 @@ class Library extends Test\Unit\Suite
                     );
     }
 
-    public function case_reach_with_composer_with_a_simple_queue(): void
+    public function case_reach_with_composer_with_a_simple_queue()
     {
         $this
             ->given(
@@ -121,7 +121,7 @@ class Library extends Test\Unit\Suite
                 );
     }
 
-    public function case_reach_with_composer_with_a_queue(): void
+    public function case_reach_with_composer_with_a_queue()
     {
         $this
             ->given(

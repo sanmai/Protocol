@@ -262,7 +262,7 @@ class Node implements \ArrayAccess, \IteratorAggregate
      * Queue of the node.
      * Generic one. Must be overrided in children classes.
      */
-    public function reach(string $queue = null)
+    public function reach($queue = null)
     {
         return empty($queue) ? $this->_reach : $queue;
     }

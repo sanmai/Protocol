@@ -47,7 +47,7 @@ use Hoa\Test;
  */
 class Node extends Test\Unit\Suite
 {
-    public function case_implements(): void
+    public function case_implements()
     {
         $this
             ->when($result = new SUT())
@@ -57,7 +57,7 @@ class Node extends Test\Unit\Suite
                     ->isInstanceOf(\IteratorAggregate::class);
     }
 
-    public function case_empty_constructor(): void
+    public function case_empty_constructor()
     {
         $this
             ->when($result = new SUT())
@@ -68,7 +68,7 @@ class Node extends Test\Unit\Suite
                     ->isEmpty();
     }
 
-    public function case_constructor_with_a_name(): void
+    public function case_constructor_with_a_name()
     {
         $this
             ->given($name = 'foo')
@@ -80,7 +80,7 @@ class Node extends Test\Unit\Suite
                     ->isEmpty();
     }
 
-    public function case_constructor_with_a_name_and_children(): void
+    public function case_constructor_with_a_name_and_children()
     {
         $this
             ->given(
@@ -95,7 +95,7 @@ class Node extends Test\Unit\Suite
                     ->hasSize(2);
     }
 
-    public function case_offset_set(): void
+    public function case_offset_set()
     {
         $this
             ->given(
@@ -112,27 +112,27 @@ class Node extends Test\Unit\Suite
                     ->isIdenticalTo($node);
     }
 
-    public function case_offset_set_not_a_node(): void
+    public function case_offset_set_not_a_node()
     {
         $this
             ->given($root = new SUT())
-            ->exception(function () use ($root): void {
+            ->exception(function () use ($root) {
                 $root->offsetSet('foo', null);
             })
                 ->isInstanceOf(LUT\Exception::class);
     }
 
-    public function case_offset_set_no_name(): void
+    public function case_offset_set_no_name()
     {
         $this
             ->given($root = new SUT())
-            ->exception(function () use ($root): void {
+            ->exception(function () use ($root) {
                 $root->offsetSet(null, new SUT());
             })
                 ->isInstanceOf(LUT\Exception::class);
     }
 
-    public function case_offset_get(): void
+    public function case_offset_get()
     {
         $this
             ->given(
@@ -146,17 +146,17 @@ class Node extends Test\Unit\Suite
                 ->isIdenticalTo($child);
     }
 
-    public function case_offset_get_an_unknown_name(): void
+    public function case_offset_get_an_unknown_name()
     {
         $this
             ->given($root = new SUT())
-            ->exception(function () use ($root): void {
+            ->exception(function () use ($root) {
                 $root->offsetGet('foo');
             })
                 ->isInstanceOf(LUT\Exception::class);
     }
 
-    public function case_offset_exists(): void
+    public function case_offset_exists()
     {
         $this
             ->given(
@@ -170,7 +170,7 @@ class Node extends Test\Unit\Suite
                     ->isTrue();
     }
 
-    public function case_offset_not_exists(): void
+    public function case_offset_not_exists()
     {
         $this
             ->given($root = new SUT())
@@ -180,7 +180,7 @@ class Node extends Test\Unit\Suite
                     ->isFalse();
     }
 
-    public function case_offset_unset(): void
+    public function case_offset_unset()
     {
         $this
             ->given(
@@ -194,7 +194,7 @@ class Node extends Test\Unit\Suite
                     ->isFalse();
     }
 
-    public function case_reach(): void
+    public function case_reach()
     {
         $this
             ->given(
@@ -207,7 +207,7 @@ class Node extends Test\Unit\Suite
                     ->isEqualTo($reach);
     }
 
-    public function case_reach_with_a_queue(): void
+    public function case_reach_with_a_queue()
     {
         $this
             ->given(
@@ -220,17 +220,17 @@ class Node extends Test\Unit\Suite
                     ->isEqualTo($queue);
     }
 
-    public function case_reach_id(): void
+    public function case_reach_id()
     {
         $this
             ->given($node = new SUT())
-            ->exception(function () use ($node): void {
+            ->exception(function () use ($node) {
                 $node->reachId('foo');
             })
                 ->isInstanceOf(LUT\Exception::class);
     }
 
-    public function case_set_reach(): void
+    public function case_set_reach()
     {
         $this
             ->given(
@@ -245,7 +245,7 @@ class Node extends Test\Unit\Suite
                     ->isEqualTo('baz');
     }
 
-    public function case_get_name(): void
+    public function case_get_name()
     {
         $this
             ->given(
@@ -258,7 +258,7 @@ class Node extends Test\Unit\Suite
                     ->isEqualTo($name);
     }
 
-    public function case_get_iterator(): void
+    public function case_get_iterator()
     {
         $this
             ->given(
@@ -277,7 +277,7 @@ class Node extends Test\Unit\Suite
                     ]);
     }
 
-    public function case_get_root(): void
+    public function case_get_root()
     {
         $this
             ->when($result = SUT::getRoot())
@@ -286,7 +286,7 @@ class Node extends Test\Unit\Suite
                     ->isIdenticalTo(LUT::getInstance());
     }
 
-    public function case_to_string_as_leaf(): void
+    public function case_to_string_as_leaf()
     {
         $this
             ->given($node = new SUT('foo'))
@@ -296,7 +296,7 @@ class Node extends Test\Unit\Suite
                     ->isEqualTo('foo' . "\n");
     }
 
-    public function case_to_string_as_node(): void
+    public function case_to_string_as_node()
     {
         $this
             ->given(
