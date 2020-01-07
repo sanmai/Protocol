@@ -7,7 +7,7 @@ This library provides the `hoa://` protocol, which is a way to abstract resource
 
 This particular fork aims to solve some deficiencies of the original library, while otherwise being a feature match to the original package. Specifically, this fork comes without the global `resolve()` function, which is known to cause a conflict with some versions of Laravel.
 
-This library is routinely tested to work with PHP 7.0, 7.1. 7.2, and 7.3. Please report any issues.
+This library is routinely tested to work with PHP 7.0-7.4. Please report any issues.
 
 ## Installation
 
