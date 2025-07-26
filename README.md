@@ -55,11 +55,10 @@ composer cs:fix
 This project uses PHPStan with custom rules for static analysis, running in an isolated environment to avoid Hoa dependency conflicts:
 
 ```sh
-# Run static analysis (isolated PHPStan with NoEmptyOnStringsRule)
 composer phpstan
 ```
 
-**Note**: PHPStan runs in an isolated environment using `bamarni/composer-bin-plugin` to avoid conflicts between the project's required Hoa v2.x libraries and PHPStan's bundled Hoa v1.x dependencies. The analysis focuses on detecting problematic `empty()` usage on strings using `sanmai/phpstan-rules`.
+**Note**: PHPStan runs in an isolated environment using `bamarni/composer-bin-plugin` to avoid conflicts between the project's required Hoa v2.x libraries and PHPStan's bundled Hoa v1.x dependencies. 
 
 ## License
 
