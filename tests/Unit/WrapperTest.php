@@ -57,11 +57,16 @@ class WrapperTest extends TestCase
     public function testMetadataAccess(): void
     {
         $wrapper = new SUT();
+        $tmpFile = tempnam(sys_get_temp_dir(), 'hoa_test_');
         
-        // Test that method exists and can be called
-        $result = $wrapper->stream_metadata('/tmp/test_chmod', STREAM_META_ACCESS, 0755);
-        
-        $this->assertIsBool($result);
+        try {
+            // Test that method exists and can be called on an existing file
+            $result = $wrapper->stream_metadata($tmpFile, STREAM_META_ACCESS, 0644);
+            
+            $this->assertIsBool($result);
+        } finally {
+            @unlink($tmpFile);
+        }
     }
 
     public function testMetadataDefault(): void
