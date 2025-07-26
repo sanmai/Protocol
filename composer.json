@@ -19,7 +19,7 @@
         }
     ],
     "require": {
-        "php": ">=7.0",
+        "php": "^8.2",
         "hoa/consistency": "*",
         "hoa/exception": "*"
     },
@@ -27,9 +27,7 @@
         "hoa/protocol": "*"
     },
     "require-dev": {
-        "atoum/atoum": "^3",
-        "atoum/stubs": "*",
-        "hoa/test": "*"
+        "phpunit/phpunit": "^11"
     },
     "extra": {
         "branch-alias": {
@@ -47,11 +45,12 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Hoa\\Protocol\\Test\\": "Test"
-        },
-        "files": [
-            "Test/Resolve.php"
-        ]
+            "Hoa\\Protocol\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "test:coverage": "phpunit --coverage-html coverage"
     },
     "support": {
         "issues": "https://github.com/sanmai/Protocol/issues"
