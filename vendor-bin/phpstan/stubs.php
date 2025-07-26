@@ -34,6 +34,9 @@ namespace Hoa {
     }
 }
 
+// Global alias for backward compatibility
+class_alias('Hoa\Protocol\Protocol', 'Hoa\Protocol');
+
 namespace Hoa\Console\Dispatcher {
     class Kit
     {

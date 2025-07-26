@@ -15,7 +15,6 @@ parameters:
     
     ignoreErrors:
         - identifier: new.noConstructor
-        - identifier: class.notFound
 
 services:
     -
