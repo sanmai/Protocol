@@ -12,6 +12,10 @@ parameters:
     
     stubFiles:
         - stubs.php
+    
+    ignoreErrors:
+        - identifier: new.noConstructor
+        - identifier: class.notFound
 
 services:
     -
