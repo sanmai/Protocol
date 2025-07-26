@@ -14,16 +14,8 @@ parameters:
         - constants.php
 
 services:
-    # Only enable empty-related rules from sanmai/phpstan-rules
-    -
-        class: Sanmai\PHPStanRules\Rules\NoEmptyRule
-        tags:
-            - phpstan.rules.rule
+    # Only enable NoEmptyOnStringsRule from sanmai/phpstan-rules
     -
         class: Sanmai\PHPStanRules\Rules\NoEmptyOnStringsRule
-        tags:
-            - phpstan.rules.rule
-    -
-        class: Sanmai\PHPStanRules\Rules\NoCountZeroComparisonRule
         tags:
             - phpstan.rules.rule
