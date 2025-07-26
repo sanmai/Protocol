@@ -46,7 +46,7 @@ class Wrapper
     /**
      * Opened stream as a resource.
      */
-    private $_stream     = null;
+    private $_stream = null;
 
     /**
      * Stream name (filename).
@@ -56,9 +56,7 @@ class Wrapper
     /**
      * Stream context (given by the streamWrapper class) as a resource.
      */
-    public $context      = null;
-
-
+    public $context = null;
 
     /**
      * Get the real path of the given URL.
@@ -87,10 +85,10 @@ class Wrapper
      * All resources that were locked, or allocated, by the wrapper should be
      * released.
      */
-    public function stream_close()
+    public function stream_close(): void
     {
         if (true === @fclose($this->getStream())) {
-            $this->_stream     = null;
+            $this->_stream = null;
             $this->_streamName = null;
         }
     }
@@ -212,7 +210,7 @@ class Wrapper
                 $path,
                 $mode,
                 (bool) ($options & STREAM_USE_PATH),
-                $this->context
+                $this->context,
             );
         }
 
@@ -220,7 +218,7 @@ class Wrapper
             return false;
         }
 
-        $this->_stream     = $openedPath;
+        $this->_stream = $openedPath;
         $this->_streamName = $path;
 
         return true;
@@ -292,10 +290,10 @@ class Wrapper
      * Any resources which were locked, or allocated, during opening and use of
      * the directory stream should be released.
      */
-    public function dir_closedir()
+    public function dir_closedir(): void
     {
         closedir($this->getStream());
-        $this->_stream     = null;
+        $this->_stream = null;
         $this->_streamName = null;
     }
 
@@ -308,7 +306,7 @@ class Wrapper
      */
     public function dir_opendir(string $path, int $options): bool
     {
-        $path   = static::realPath($path);
+        $path = static::realPath($path);
         $handle = null;
 
         if (null === $this->context) {
@@ -321,7 +319,7 @@ class Wrapper
             return false;
         }
 
-        $this->_stream     = $handle;
+        $this->_stream = $handle;
         $this->_streamName = $path;
 
         return true;
@@ -331,7 +329,7 @@ class Wrapper
      * Read entry from directory handle.
      * This method is called in response to readdir().
      *
-     * @return  mixed
+     * @return mixed
      */
     public function dir_readdir()
     {
@@ -345,7 +343,7 @@ class Wrapper
      * call to self::dir_readdir should return the first entry in the location
      * returned by self::dir_opendir.
      */
-    public function dir_rewinddir()
+    public function dir_rewinddir(): void
     {
         rewinddir($this->getStream());
     }
@@ -360,7 +358,7 @@ class Wrapper
             return mkdir(
                 static::realPath($path, false),
                 $mode,
-                $options | STREAM_MKDIR_RECURSIVE
+                $options | STREAM_MKDIR_RECURSIVE,
             );
         }
 
@@ -368,7 +366,7 @@ class Wrapper
             static::realPath($path, false),
             $mode,
             (bool) ($options | STREAM_MKDIR_RECURSIVE),
-            $this->context
+            $this->context,
         );
     }
 
@@ -386,7 +384,7 @@ class Wrapper
         return rename(
             static::realPath($from),
             static::realPath($to, false),
-            $this->context
+            $this->context,
         );
     }
 
@@ -442,7 +440,7 @@ class Wrapper
             } else {
                 return trigger_error(
                     'Path ' . $path . ' cannot be resolved.',
-                    E_WARNING
+                    E_WARNING,
                 );
             }
         }

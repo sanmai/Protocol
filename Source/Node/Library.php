@@ -56,7 +56,7 @@ class Library extends Node
             $head = $queue;
 
             if (false !== $pos = strpos($queue, '/')) {
-                $head  = substr($head, 0, $pos);
+                $head = substr($head, 0, $pos);
                 $queue = DIRECTORY_SEPARATOR . substr($queue, $pos + 1);
             } else {
                 $queue = null;
@@ -76,9 +76,9 @@ class Library extends Node
         $out = [];
 
         foreach (explode(RS, $this->_reach) as $part) {
-            $pos   = strrpos(rtrim($part, DIRECTORY_SEPARATOR), DIRECTORY_SEPARATOR) + 1;
-            $head  = substr($part, 0, $pos);
-            $tail  = substr($part, $pos);
+            $pos = strrpos(rtrim($part, DIRECTORY_SEPARATOR), DIRECTORY_SEPARATOR) + 1;
+            $head = substr($part, 0, $pos);
+            $tail = substr($part, $pos);
             $out[] = $head . strtolower($tail);
         }
 

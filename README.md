@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.com/sanmai/Protocol.svg?branch=master)](https://travis-ci.com/sanmai/Protocol)
 [![Latest Stable Version](https://poser.pugx.org/sanmai/hoa-protocol/v/stable)](https://packagist.org/packages/sanmai/hoa-protocol)
+[![Total Downloads](https://poser.pugx.org/sanmai/hoa-protocol/downloads)](https://packagist.org/packages/sanmai/hoa-protocol)
 
 # Hoa\Protocol
 
@@ -7,7 +7,7 @@ This library provides the `hoa://` protocol, which is a way to abstract resource
 
 This particular fork aims to solve some deficiencies of the original library, while otherwise being a feature match to the original package. Specifically, this fork comes without the global `resolve()` function, which is known to cause a conflict with some versions of Laravel.
 
-This library is routinely tested to work with PHP 7.0-7.4. Please report any issues.
+This library requires PHP 8.2+ and is routinely tested. Please report any issues.
 
 ## Installation
 
@@ -29,7 +29,25 @@ composer install
 Then, to run all the test suites:
 
 ```sh
-vendor/bin/atoum -d Test
+vendor/bin/phpunit
+```
+
+Or use the composer script:
+
+```sh
+composer test
+```
+
+## Code Style
+
+This project uses PHP CS Fixer to maintain consistent code style:
+
+```sh
+# Check code style
+composer cs:check
+
+# Fix code style automatically
+composer cs:fix
 ```
 
 ## License

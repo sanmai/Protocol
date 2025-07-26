@@ -19,14 +19,14 @@ class ProtocolTest extends TestCase
     public function testRootIsANode(): void
     {
         $result = SUT::getInstance();
-        
+
         $this->assertInstanceOf(LUT\Node\Node::class, $result);
     }
 
     public function testDefaultTree(): void
     {
         $result = SUT::getInstance();
-        
+
         $this->assertInstanceOf(LUT\Node\Node::class, $result['Application']);
         $this->assertInstanceOf(LUT\Node\Node::class, $result['Application']['Public']);
         $this->assertInstanceOf(LUT\Node\Node::class, $result['Data']);
@@ -43,34 +43,34 @@ class ProtocolTest extends TestCase
         $this->assertInstanceOf(LUT\Node\Node::class, $result['Data']['Variable']['Run']);
         $this->assertInstanceOf(LUT\Node\Node::class, $result['Data']['Variable']['Test']);
         $this->assertInstanceOf(LUT\Node\Library::class, $result['Library']);
-        
+
         $this->assertIsString($result['Library']->reach());
     }
 
     public function testResolveNotAHoaPath(): void
     {
         $protocol = SUT::getInstance();
-        
+
         $result = $protocol->resolve('/foo/bar');
-        
+
         $this->assertSame('/foo/bar', $result);
     }
 
     public function testResolveToNonExistingResource(): void
     {
         $protocol = SUT::getInstance();
-        
+
         $result = $protocol->resolve('hoa://Application/Foo/Bar');
-        
+
         $this->assertSame(SUT::NO_RESOLUTION, $result);
     }
 
     public function testResolveDoesNotTestIfExists(): void
     {
         $protocol = SUT::getInstance();
-        
+
         $result = $protocol->resolve('hoa://Application/Foo/Bar', false);
-        
+
         // This should return a resolved path, not check if it exists
         $this->assertIsString($result);
         $this->assertStringContainsString('Foo/Bar', $result);
@@ -79,18 +79,18 @@ class ProtocolTest extends TestCase
     public function testResolveUnfoldToExistingResources(): void
     {
         $protocol = SUT::getInstance();
-        
+
         $result = $protocol->resolve('hoa://Library', true, true);
-        
+
         $this->assertIsArray($result);
     }
 
     public function testResolveUnfoldToNonExistingResources(): void
     {
         $protocol = SUT::getInstance();
-        
+
         $result = $protocol->resolve('hoa://Library', false, true);
-        
+
         $this->assertIsArray($result);
         $this->assertNotEmpty($result);
     }
