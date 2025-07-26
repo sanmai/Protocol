@@ -93,7 +93,7 @@ jobs:
         run: composer install --prefer-dist --no-progress
 
       - name: Run PHPStan
-        run: vendor/bin/phpstan analyze
+        run: composer phpstan
 
   mutation-testing:
     name: Mutation Testing

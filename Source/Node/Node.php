@@ -97,11 +97,11 @@ class Node implements \ArrayAccess, \IteratorAggregate
             );
         }
 
-        if (empty($name)) {
+        if ($name === null || $name === '') {
             $name = $node->getName();
         }
 
-        if (empty($name)) {
+        if ($name === null || $name === '') {
             throw new Protocol\Exception(
                 'Cannot add a node to the `hoa://` protocol without a name.',
                 1,
@@ -153,7 +153,7 @@ class Node implements \ArrayAccess, \IteratorAggregate
             $path = substr($path, 6);
         }
 
-        if (empty($path)) {
+        if ($path === '') {
             return null;
         }
 
@@ -211,7 +211,7 @@ class Node implements \ArrayAccess, \IteratorAggregate
             $reach = '';
         }
 
-        if (empty($accumulator)) {
+        if ($accumulator === null || $accumulator === [] || $accumulator === '') {
             $accumulator = explode(RS, $reach);
 
             return;
@@ -262,7 +262,7 @@ class Node implements \ArrayAccess, \IteratorAggregate
      */
     public function reach($queue = null)
     {
-        return empty($queue) ? $this->_reach : $queue;
+        return ($queue === null || $queue === '') ? $this->_reach : $queue;
     }
 
     /**
