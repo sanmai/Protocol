@@ -15,7 +15,7 @@ With [Composer](https://getcomposer.org/), to include this library into
 your dependencies, you need to...
 
 ```sh
-composer require niro/hoa-protocol
+composer require sanmai/hoa-protocol
 ```
 
 ## Testing
