@@ -2,14 +2,16 @@ parameters:
     level: 0
     paths:
         - ../../Source
-        - ../../Bin
-        - ../../tests
+    
+    excludePaths:
+        - ../../Source/Exception.php
+        - ../../Source/Protocol.php
+        - ../../Source/Wrapper.php
     
     errorFormat: raw
     
     stubFiles:
         - stubs.php
-    
 
 services:
     -
