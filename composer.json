@@ -19,7 +19,9 @@
         }
     ],
     "require": {
-        "php": "^8.2"
+        "php": "^8.2",
+        "hoa/consistency": "^2.17",
+        "hoa/exception": "^2.17"
     },
     "replace": {
         "hoa/protocol": "*"

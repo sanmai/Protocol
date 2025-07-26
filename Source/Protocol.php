@@ -39,6 +39,8 @@ declare(strict_types=1);
 namespace Hoa\Protocol;
 
 use Hoa\Consistency;
+use Hoa\Protocol\Node\Node;
+use Hoa\Protocol\Node as NodeNamespace;
 
 /**
  * Root of the `hoa://` protocol.
@@ -135,7 +137,7 @@ class Protocol extends Node
             ],
         );
 
-        $this[] = new Node\Library(
+        $this[] = new NodeNamespace\Library(
             'Library',
             $root . DS . 'Hoathis' . DS . RS .
             $root . DS . 'Hoa' . DS,

@@ -5,10 +5,6 @@ parameters:
         - Bin
         - tests
     
-    # Use stubs for Hoa dependencies
-    stubFiles:
-        - stubs/hoa-stubs.php
-    
     # Bootstrap constants
     bootstrapFiles:
         - constants.php
