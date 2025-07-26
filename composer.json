@@ -58,7 +58,7 @@
         "test:coverage": "phpunit --coverage-html coverage",
         "cs:check": "php-cs-fixer fix --dry-run --diff",
         "cs:fix": "php-cs-fixer fix",
-        "phpstan": "cd vendor-bin/phpstan && ../../vendor/bin/phpstan analyse --configuration=phpstan.neon"
+        "phpstan": "cd vendor-bin/phpstan && vendor/bin/phpstan analyse --configuration=phpstan.neon"
     },
     "support": {
         "issues": "https://github.com/sanmai/Protocol/issues"

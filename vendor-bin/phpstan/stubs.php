@@ -7,10 +7,10 @@ declare(strict_types=1);
 namespace Hoa\Console\Dispatcher {
     class Kit
     {
-        protected $options = [];
-        protected $parser = null;
+        protected array $options = [];
+        protected mixed $parser = null;
 
-        public function getOption(&$v): bool
+        public function getOption(mixed &$v): bool
         {
             return false;
         }
@@ -36,7 +36,7 @@ namespace Hoa\Console {
 
     class Console
     {
-        public static function isDirect($stream): bool
+        public static function isDirect(mixed $stream): bool
         {
             return true;
         }
@@ -54,31 +54,40 @@ namespace Hoa\Console {
 namespace PHPUnit\Framework {
     class TestCase
     {
-        public function assertInstanceOf(string $expected, $actual): void
+        public function assertInstanceOf(string $expected, mixed $actual, string $message = ''): void
         {
         }
-        public function assertIsString($actual): void
+        public function assertIsString(mixed $actual, string $message = ''): void
         {
         }
-        public function assertSame($expected, $actual): void
+        public function assertSame(mixed $expected, mixed $actual, string $message = ''): void
         {
         }
-        public function assertIsArray($actual): void
+        public function assertIsArray(mixed $actual, string $message = ''): void
         {
         }
-        public function assertNotEmpty($actual): void
+        public function assertNotEmpty(mixed $actual, string $message = ''): void
         {
         }
-        public function assertStringContainsString(string $needle, string $haystack): void
+        public function assertStringContainsString(string $needle, string $haystack, string $message = ''): void
         {
         }
-        public function assertNull($actual): void
+        public function assertNull(mixed $actual, string $message = ''): void
         {
         }
-        public function assertIsBool($actual): void
+        public function assertIsBool(mixed $actual, string $message = ''): void
         {
         }
-        public function assertFalse($actual): void
+        public function assertFalse(mixed $actual, string $message = ''): void
+        {
+        }
+        public function assertTrue(mixed $actual, string $message = ''): void
+        {
+        }
+        public function assertArrayHasKey(int|string $key, array $array, string $message = ''): void
+        {
+        }
+        public function assertContains(mixed $needle, iterable $haystack, string $message = ''): void
         {
         }
     }
