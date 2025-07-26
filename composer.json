@@ -19,7 +19,7 @@
         }
     ],
     "require": {
-        "php": ">=7.0",
+        "php": "^8.1",
         "hoa/consistency": "*",
         "hoa/exception": "*"
     },
@@ -27,9 +27,7 @@
         "hoa/protocol": "*"
     },
     "require-dev": {
-        "atoum/atoum": "^3",
-        "atoum/stubs": "*",
-        "hoa/test": "*"
+        "phpunit/phpunit": "^11"
     },
     "extra": {
         "branch-alias": {
