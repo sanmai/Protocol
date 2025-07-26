@@ -50,6 +50,16 @@ composer cs:check
 composer cs:fix
 ```
 
+## Static Analysis
+
+This project uses PHPStan with custom rules for static analysis, running in an isolated environment to avoid Hoa dependency conflicts:
+
+```sh
+composer phpstan
+```
+
+**Note**: PHPStan runs in an isolated environment using `bamarni/composer-bin-plugin` to avoid conflicts between the project's required Hoa v2.x libraries and PHPStan's bundled Hoa v1.x dependencies. 
+
 ## License
 
 Hoa is under the New BSD License (BSD-3-Clause). Please, see

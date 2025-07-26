@@ -52,7 +52,7 @@ class Library extends Node
             return parent::reach($queue);
         }
 
-        if (!empty($queue)) {
+        if ($queue !== null && $queue !== '') {
             $head = $queue;
 
             if (false !== $pos = strpos($queue, '/')) {
