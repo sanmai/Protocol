@@ -1,4 +1,3 @@
-[![Build Status](https://travis-ci.com/sanmai/Protocol.svg?branch=master)](https://travis-ci.com/sanmai/Protocol)
 [![Latest Stable Version](https://poser.pugx.org/sanmai/hoa-protocol/v/stable)](https://packagist.org/packages/sanmai/hoa-protocol)
 
 # Hoa\Protocol
