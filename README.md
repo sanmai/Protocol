@@ -38,6 +38,18 @@ Or use the composer script:
 composer test
 ```
 
+## Code Style
+
+This project uses PHP CS Fixer to maintain consistent code style:
+
+```sh
+# Check code style
+composer cs:check
+
+# Fix code style automatically
+composer cs:fix
+```
+
 ## License
 
 Hoa is under the New BSD License (BSD-3-Clause). Please, see
