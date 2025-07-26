@@ -5,16 +5,13 @@ parameters:
         - ../../Bin
         - ../../tests
     
-    # Use raw error format for easier parsing
     errorFormat: raw
     
-    # Stubs for missing dependencies
     stubFiles:
         - stubs.php
     
 
 services:
-    # Only enable NoEmptyOnStringsRule from sanmai/phpstan-rules
     -
         class: Sanmai\PHPStanRules\Rules\NoEmptyOnStringsRule
         tags:
