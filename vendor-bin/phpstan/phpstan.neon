@@ -12,9 +12,9 @@ parameters:
     stubFiles:
         - stubs.php
     
-    # Bootstrap constants only
+    # Bootstrap constants - define them inline for PHPStan only
     bootstrapFiles:
-        - ../../constants.php
+        - bootstrap.php
 
 services:
     # Only enable NoEmptyOnStringsRule from sanmai/phpstan-rules

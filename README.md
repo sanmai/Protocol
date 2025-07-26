@@ -18,6 +18,21 @@ your dependencies, you need to...
 composer require sanmai/hoa-protocol
 ```
 
+## Required Constants
+
+This package expects these constants to be defined by your application:
+
+- `DS` - Directory separator (typically `DIRECTORY_SEPARATOR`)
+- `RS` - Record separator (typically `;`)  
+- `WITH_COMPOSER` - Boolean indicating Composer usage (typically `true`)
+
+Example:
+```php
+define('DS', DIRECTORY_SEPARATOR);
+define('RS', ';');
+define('WITH_COMPOSER', true);
+```
+
 ## Testing
 
 Before running the test suites, the development dependencies must be installed:
