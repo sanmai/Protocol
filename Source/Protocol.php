@@ -50,7 +50,7 @@ class Protocol extends Node
      *
      * @const string
      */
-    const NO_RESOLUTION = '/hoa/flatland';
+    public const NO_RESOLUTION = '/hoa/flatland';
 
     /**
      * Singleton.
@@ -60,9 +60,7 @@ class Protocol extends Node
     /**
      * Cache of resolver.
      */
-    private static $_cache    = [];
-
-
+    private static $_cache = [];
 
     /**
      * Initialize the protocol.
@@ -90,9 +88,9 @@ class Protocol extends Node
     /**
      * Initialize the protocol.
      */
-    protected function initialize()
+    protected function initialize(): void
     {
-        $root  = dirname(__DIR__, 3);
+        $root = dirname(__DIR__, 3);
         $argv0 = realpath($_SERVER['argv'][0] ?? '');
 
         $cwd =
@@ -104,8 +102,8 @@ class Protocol extends Node
             'Application',
             $cwd . DS,
             [
-                new Node('Public', 'Public' . DS)
-            ]
+                new Node('Public', 'Public' . DS),
+            ],
         );
 
         $this[] = new Node(
@@ -117,8 +115,8 @@ class Protocol extends Node
                     'Etc' . DS,
                     [
                         new Node('Configuration', 'Configuration' . DS),
-                        new Node('Locale', 'Locale' . DS)
-                    ]
+                        new Node('Locale', 'Locale' . DS),
+                    ],
                 ),
                 new Node('Lost+found', 'Lost+found' . DS),
                 new Node('Temporary', 'Temporary' . DS),
@@ -131,16 +129,16 @@ class Protocol extends Node
                         new Node('Log', 'Log' . DS),
                         new Node('Private', 'Private' . DS),
                         new Node('Run', 'Run' . DS),
-                        new Node('Test', 'Test' . DS)
-                    ]
-                )
-            ]
+                        new Node('Test', 'Test' . DS),
+                    ],
+                ),
+            ],
         );
 
         $this[] = new Node\Library(
             'Library',
             $root . DS . 'Hoathis' . DS . RS .
-            $root . DS . 'Hoa' . DS
+            $root . DS . 'Hoa' . DS,
         );
     }
 
@@ -222,7 +220,7 @@ class Protocol extends Node
     /**
      * Clear the cache.
      */
-    public static function clearCache()
+    public static function clearCache(): void
     {
         self::$_cache = [];
     }

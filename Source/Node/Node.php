@@ -49,19 +49,17 @@ class Node implements \ArrayAccess, \IteratorAggregate
     /**
      * Node's name.
      */
-    protected $_name       = null;
+    protected $_name = null;
 
     /**
      * Path for the `reach` method.
      */
-    protected $_reach      = null;
+    protected $_reach = null;
 
     /**
      * Children of the node.
      */
-    private $_children     = [];
-
-
+    private $_children = [];
 
     /**
      * Construct a protocol's node.
@@ -95,7 +93,7 @@ class Node implements \ArrayAccess, \IteratorAggregate
             throw new Protocol\Exception(
                 'Protocol node must extend %s.',
                 0,
-                [__CLASS__]
+                [__CLASS__],
             );
         }
 
@@ -106,7 +104,7 @@ class Node implements \ArrayAccess, \IteratorAggregate
         if (empty($name)) {
             throw new Protocol\Exception(
                 'Cannot add a node to the `hoa://` protocol without a name.',
-                1
+                1,
             );
         }
 
@@ -122,7 +120,7 @@ class Node implements \ArrayAccess, \IteratorAggregate
             throw new Protocol\Exception(
                 'Node %s does not exist.',
                 2,
-                [$name]
+                [$name],
             );
         }
 
@@ -161,18 +159,18 @@ class Node implements \ArrayAccess, \IteratorAggregate
 
         if (null === $accumulator) {
             $accumulator = [];
-            $posId       = strpos($path, '#');
+            $posId = strpos($path, '#');
 
             if (false !== $posId) {
-                $id   = substr($path, $posId + 1);
+                $id = substr($path, $posId + 1);
                 $path = substr($path, 0, $posId);
             } else {
-                $id   = null;
+                $id = null;
             }
         }
 
         $path = trim($path, '/');
-        $pos  = strpos($path, '/');
+        $pos = strpos($path, '/');
 
         if (false !== $pos) {
             $next = substr($path, 0, $pos);
@@ -207,7 +205,7 @@ class Node implements \ArrayAccess, \IteratorAggregate
     /**
      * Resolve choices, i.e. a reach value has a “;”.
      */
-    protected function _resolveChoice($reach, &$accumulator)
+    protected function _resolveChoice($reach, &$accumulator): void
     {
         if (null === $reach) {
             $reach = '';
@@ -235,8 +233,8 @@ class Node implements \ArrayAccess, \IteratorAggregate
             return;
         }
 
-        $choices     = explode(RS, $reach);
-        $ref         = $accumulator;
+        $choices = explode(RS, $reach);
+        $ref = $accumulator;
         $accumulator = [];
 
         foreach ($choices as $choice) {
@@ -271,12 +269,12 @@ class Node implements \ArrayAccess, \IteratorAggregate
      * ID of the component.
      * Generic one. Should be overrided in children classes.
      */
-    public function reachId(string $id)
+    public function reachId(string $id): void
     {
         throw new Protocol\Exception(
             'The node %s has no ID support (tried to reach #%s).',
             4,
-            [$this->getName(), $id]
+            [$this->getName(), $id],
         );
     }
 
@@ -285,7 +283,7 @@ class Node implements \ArrayAccess, \IteratorAggregate
      */
     public function setReach(string $reach)
     {
-        $old          = $this->_reach;
+        $old = $this->_reach;
         $this->_reach = $reach;
 
         return $old;

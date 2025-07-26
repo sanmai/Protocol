@@ -53,19 +53,17 @@ class Resolve extends Console\Dispatcher\Kit
         ['tree',       Console\GetOption::NO_ARGUMENT, 't'],
         ['no-verbose', Console\GetOption::NO_ARGUMENT, 'V'],
         ['help',       Console\GetOption::NO_ARGUMENT, 'h'],
-        ['help',       Console\GetOption::NO_ARGUMENT, '?']
+        ['help',       Console\GetOption::NO_ARGUMENT, '?'],
     ];
-
-
 
     /**
      * The entry method.
      */
     public function main()
     {
-        $exists  = true;
-        $unfold  = false;
-        $tree    = false;
+        $exists = true;
+        $unfold = false;
+        $tree = false;
         $verbose = Console::isDirect(STDOUT);
 
         while (false !== $c = $this->getOption($v)) {
@@ -109,13 +107,13 @@ class Resolve extends Console\Dispatcher\Kit
 
         if (true === $tree) {
             $protocol = Protocol::getInstance();
-            $foo      = substr($path, 0, 6);
+            $foo = substr($path, 0, 6);
 
             if ('hoa://' !== $foo) {
                 return 1;
             }
 
-            $path    = substr($path, 6);
+            $path = substr($path, 6);
             $current = $protocol;
 
             foreach (explode('/', $path) as $component) {
@@ -134,9 +132,9 @@ class Resolve extends Console\Dispatcher\Kit
         if (true === $verbose) {
             echo
                 Console\Cursor::colorize('foreground(yellow)'),
-                $path,
-                Console\Cursor::colorize('normal'),
-                ' is equivalent to:', "\n";
+            $path,
+            Console\Cursor::colorize('normal'),
+            ' is equivalent to:', "\n";
         }
 
         $resolved = Protocol\Protocol::getInstance()->resolve($path, $exists, $unfold);
@@ -151,19 +149,19 @@ class Resolve extends Console\Dispatcher\Kit
     /**
      * The command usage.
      */
-    public function usage()
+    public function usage(): void
     {
         echo
             'Usage   : protocol:resolve <options> path', "\n",
-            'Options :', "\n",
-            $this->makeUsageOptionsList([
-                'E'    => 'Do not check if the resolution result exists.',
-                'u'    => 'Unfold all possible results.',
-                't'    => 'Print the tree from the path.',
-                'V'    => 'No-verbose, i.e. be as quiet as possible, just print ' .
-                          'essential information.',
-                'help' => 'This help.'
-            ]), "\n";
+        'Options :', "\n",
+        $this->makeUsageOptionsList([
+            'E' => 'Do not check if the resolution result exists.',
+            'u' => 'Unfold all possible results.',
+            't' => 'Print the tree from the path.',
+            'V' => 'No-verbose, i.e. be as quiet as possible, just print ' .
+                      'essential information.',
+            'help' => 'This help.',
+        ]), "\n";
     }
 }
 
