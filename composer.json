@@ -44,7 +44,9 @@
             "Hoa\\Protocol\\": "Source",
             "Hoa\\Protocol\\Bin\\": "Bin"
         },
-        "files": []
+        "files": [
+            "Source/Wrapper.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
