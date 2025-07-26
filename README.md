@@ -52,14 +52,14 @@ composer cs:fix
 
 ## Static Analysis
 
-**Note**: PHPStan analysis is currently disabled due to dependency conflicts between the project's required Hoa libraries and PHPStan's bundled Hoa dependencies. This is a known limitation with legacy Hoa packages.
-
-The codebase is thoroughly tested with 36 unit tests covering all functionality. For string empty() validation (the primary static analysis goal), manual code review is recommended.
+This project uses PHPStan with custom rules for static analysis, running in an isolated environment to avoid Hoa dependency conflicts:
 
 ```sh
-# Static analysis is temporarily unavailable due to Hoa dependency conflicts
-# composer phpstan
+# Run static analysis (isolated PHPStan with NoEmptyOnStringsRule)
+composer phpstan
 ```
+
+**Note**: PHPStan runs in an isolated environment using `bamarni/composer-bin-plugin` to avoid conflicts between the project's required Hoa v2.x libraries and PHPStan's bundled Hoa v1.x dependencies. The analysis focuses on detecting problematic `empty()` usage on strings using `sanmai/phpstan-rules`.
 
 ## License
 

@@ -1,0 +1,21 @@
+parameters:
+    level: 0
+    paths:
+        - ../../Source
+        - ../../Bin
+        - ../../tests
+    
+    # Stubs for missing dependencies
+    stubFiles:
+        - stubs.php
+    
+    # Bootstrap constants only
+    bootstrapFiles:
+        - ../../constants.php
+
+services:
+    # Only enable NoEmptyOnStringsRule from sanmai/phpstan-rules
+    -
+        class: Sanmai\PHPStanRules\Rules\NoEmptyOnStringsRule
+        tags:
+            - phpstan.rules.rule
