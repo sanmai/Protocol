@@ -69,7 +69,7 @@ class Node implements \ArrayAccess, \IteratorAggregate
      * overload the `$_name` attribute), we can set the `$_name` attribute
      * dynamically. This is useful to create a node on-the-fly.
      */
-    public function __construct(string $name = null, string $reach = null, array $children = [])
+    public function __construct(?string $name = null, ?string $reach = null, array $children = [])
     {
         if (null !== $name) {
             $this->_name = $name;
@@ -89,7 +89,7 @@ class Node implements \ArrayAccess, \IteratorAggregate
     /**
      * Add a node.
      */
-    public function offsetSet($name, $node)
+    public function offsetSet($name, $node): void
     {
         if (!($node instanceof self)) {
             throw new Protocol\Exception(
@@ -140,7 +140,7 @@ class Node implements \ArrayAccess, \IteratorAggregate
     /**
      * Remove a node.
      */
-    public function offsetUnset($name)
+    public function offsetUnset($name): void
     {
         unset($this->_children[$name]);
     }
@@ -149,7 +149,7 @@ class Node implements \ArrayAccess, \IteratorAggregate
      * Resolve a path, i.e. iterate the nodes tree and reach the queue of
      * the path.
      */
-    protected function _resolve(string $path, &$accumulator, string $id = null)
+    protected function _resolve(string $path, &$accumulator, ?string $id = null)
     {
         if (substr($path, 0, 6) == 'hoa://') {
             $path = substr($path, 6);
