@@ -95,7 +95,7 @@ class Node implements \ArrayAccess, \IteratorAggregate
             throw new Protocol\Exception(
                 'Protocol node must extend %s.',
                 0,
-                __CLASS__
+                [__CLASS__]
             );
         }
 
@@ -122,7 +122,7 @@ class Node implements \ArrayAccess, \IteratorAggregate
             throw new Protocol\Exception(
                 'Node %s does not exist.',
                 2,
-                $name
+                [$name]
             );
         }
 

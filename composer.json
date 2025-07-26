@@ -45,11 +45,12 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Hoa\\Protocol\\Test\\": "Test"
-        },
-        "files": [
-            "Test/Resolve.php"
-        ]
+            "Hoa\\Protocol\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "test:coverage": "phpunit --coverage-html coverage"
     },
     "support": {
         "issues": "https://github.com/sanmai/Protocol/issues"
