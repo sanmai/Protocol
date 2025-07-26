@@ -19,16 +19,16 @@
         }
     ],
     "require": {
-        "php": "^8.2",
-        "hoa/consistency": "*",
-        "hoa/exception": "*"
+        "php": "^8.2"
     },
     "replace": {
         "hoa/protocol": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "^11",
-        "friendsofphp/php-cs-fixer": "^3.84"
+        "friendsofphp/php-cs-fixer": "^3.84",
+        "phpstan/phpstan": "^2.1",
+        "sanmai/phpstan-rules": "^0.3.10"
     },
     "extra": {
         "branch-alias": {
@@ -40,9 +40,7 @@
             "Hoa\\Protocol\\": "Source",
             "Hoa\\Protocol\\Bin\\": "Bin"
         },
-        "files": [
-            "Source/Wrapper.php"
-        ]
+        "files": []
     },
     "autoload-dev": {
         "psr-4": {
@@ -53,7 +51,9 @@
         "test": "phpunit",
         "test:coverage": "phpunit --coverage-html coverage",
         "cs:check": "php-cs-fixer fix --dry-run --diff",
-        "cs:fix": "php-cs-fixer fix"
+        "cs:fix": "php-cs-fixer fix",
+        "phpstan": "phpstan analyse",
+        "phpstan:baseline": "phpstan analyse --generate-baseline"
     },
     "support": {
         "issues": "https://github.com/sanmai/Protocol/issues"

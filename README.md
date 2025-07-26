@@ -50,6 +50,18 @@ composer cs:check
 composer cs:fix
 ```
 
+## Static Analysis
+
+This project uses PHPStan with custom rules for static analysis:
+
+```sh
+# Run static analysis
+composer phpstan
+
+# Generate baseline for existing issues
+composer phpstan:baseline
+```
+
 ## License
 
 Hoa is under the New BSD License (BSD-3-Clause). Please, see

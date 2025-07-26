@@ -1,0 +1,17 @@
+parameters:
+    level: 0
+    paths:
+        - Source
+        - Bin
+        - tests
+    
+    # Use stubs for Hoa dependencies
+    stubFiles:
+        - stubs/hoa-stubs.php
+    
+    # Bootstrap constants
+    bootstrapFiles:
+        - constants.php
+
+includes:
+    - vendor/sanmai/phpstan-rules/extension.neon
