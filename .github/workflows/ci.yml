@@ -8,6 +8,8 @@ on:
     branches:
       - main
   pull_request:
+  schedule:
+    - cron: '37 13 17 7 *'  # Yearly on July 17th at 1:37 PM UTC
 
 jobs:
   test:
