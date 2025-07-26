@@ -92,6 +92,9 @@ jobs:
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress
 
+      - name: Install PHPStan dependencies
+        run: cd vendor-bin/phpstan && composer install --prefer-dist --no-progress
+
       - name: Run PHPStan
         run: composer phpstan
 
