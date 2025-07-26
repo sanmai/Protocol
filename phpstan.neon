@@ -5,7 +5,18 @@ parameters:
         - Bin
         - tests
     
-    # Bootstrap constants
+    # Exclude vendor directory to prevent Hoa conflicts
+    excludePaths:
+        - vendor/*
+    
+    # Don't scan vendor directories
+    scanDirectories: []
+    
+    # Use comprehensive stubs for all dependencies
+    stubFiles:
+        - stubs/hoa-stubs.php
+    
+    # Bootstrap constants only  
     bootstrapFiles:
         - constants.php
 
